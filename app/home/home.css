@@ -1,0 +1,19 @@
+
+.vertical-center {  
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+}
+.header{
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+}
+.headerImg{
+  width: 15%;
+  text-align: center;
+}
+.formAuth{
+  background-color: white !important;
+}
