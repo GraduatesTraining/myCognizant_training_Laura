@@ -9,5 +9,8 @@ angular
   .module 'appExam', [
     'ngMaterial',
     'ui.router',
-    'home'
+    'home',
+    'LocalStorageModule'
   ]
+
+
