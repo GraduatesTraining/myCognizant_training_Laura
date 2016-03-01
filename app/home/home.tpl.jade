@@ -1,24 +1,30 @@
-.header
-  img(src="./images/letters.jpg" class="img-responsive headerImg")
-.imgBack
-  .container.vertical-center
-    .container.jumbotron.formAuth 
-        //Login funtionality
-        form(class="form-horizontal" name="formLogin" ng-controller="LoguserCtrl as auth")
-          label(class="control-label") User
 
-          input(type="text" class="form-control" placeholder="Your user or email" ng-model="auth.user")
-          label(class="control-label") Password
+//Login funtionality
+form(name="formLogin" ng-controller="LoguserCtrl as auth")
+  md-input-container(class="md-block")
+    label User
+    input(ng-model="auth.user")
+  md-input-container(class="md-block")
+    label Password
+    input(ng-model="auth.psw")
+  //Buttons    
+  section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+    md-button(class="md-raised md-primary" ng-click="auth.login(auth.user, auth.psw)" ng-hide="auth.registration") Login-In
+    md-button(class="md-raised md-primary" ng-click="auth.register()" ng-hide="auth.registration") Register
 
-          input(type="password" class="form-control" placeholder="Password" ng-model="auth.psw")
-          //Buttons    
-          button(type="submit" class="btn btn-primary" ng-click="auth.login(auth.user, auth.psw)" ng-hide="auth.registration") Login-In
-          button(type="submit" class="btn btn-primary" ng-click="auth.register()" ng-hide="auth.registration") Register
-          //Registration form    
-          .form(class="form-horizontal" name="formReg" ng-show="auth.registration")
-            label(class="control-label") Name
-            input(type="text" class="form-control" placeholder="Name" ng-model="auth.name")
-            label(class="control-label") Surname
-            input(type="text" class="form-control" placeholder="Surname" ng-model="auth.surname")
-            button(type="submit" class="btn btn-primary" ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname)") Submit
-            button(type="submit" class="btn btn-danger" ng-click="auth.cancelRegistration()" ng-show="auth.registration") Cancel
+  //Registration form
+  
+  div(ng-show="auth.registration")
+    md-input-container(class="md-block")
+      label Name
+      input(ng-model="auth.name")
+    md-input-container(class="md-block")
+      label Surname
+      input(ng-model="auth.surname")
+    //Buttons
+    section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+      md-button(class="md-raised md-primary" ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname)") Submit
+      md-button(class="md-raised md-warn" ng-click="auth.cancelRegistration()" ng-show="auth.registration") Cancel
+
+
+     
