@@ -12,8 +12,7 @@ angular
   .factory 'Login', [
     'localStorageService'
     (localStorageService) ->
-      login: (user, psw) ->
-
+      login: (user, psw, state) ->
         @loginSuccess = false
         @user = user
         @psw = psw
@@ -22,17 +21,12 @@ angular
         @pswSession = ""
         for aux, i in users
           if user is aux.user and psw is aux.psw
-            alert user
-            alert psw
             @loginSuccess = true
             @userSession = localStorageService.set('user', @user)
             @pswSession = localStorageService.set('psw', @psw)
-            
-        if @loginSuccess is true
-          alert "here I need a message: Welcome + name, it's correct"
-          location.href = '/home/home.tpl.html'
-        else
-          alert "here I need a message: it's failed"
+            state.go('main')
+        if @loginSuccess is false
+          alert "msg err. User and/or psw incorrect"
         return
   ]
   

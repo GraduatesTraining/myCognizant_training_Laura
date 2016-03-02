@@ -10,7 +10,8 @@ angular
     'ngMaterial',
     'ui.router',
     'home',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'main'
   ]
 
 

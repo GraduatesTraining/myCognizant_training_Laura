@@ -11,7 +11,7 @@ angular
   .module 'appExam'
   .factory 'Register', ->
     
-    register: (user, psw, name, surname) ->
+    register: (user, psw, name, surname,state) ->
       @user = user
       @psw = psw
       @name = name
@@ -31,13 +31,11 @@ angular
       
       for aux in @dataUser
         if user is aux.user
-          alert "Here goes a message. The user already exists"
+          alert "Err msg. The user already exists"
         else
           @dataUser.push(newUser)
-          console.log @dataUser
-          alert "Here goes a message. The user has been added"
+          state.go('main')
           break
-          #location.href = '/home/home.tpl.html'
       return
   
 users = [

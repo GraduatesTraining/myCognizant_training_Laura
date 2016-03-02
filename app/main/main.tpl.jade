@@ -1,0 +1,17 @@
+  
+body(layout='column', ng-controller='MainCtrl')
+  md-toolbar(layout='row')
+    md-button.md-icon-button.menuBtn(ng-click="toggleSidenav('left')", hide-gt-sm='')
+      md-icon(aria-label='Menu')    
+    h1.md-toolbar-tools(layout-align-gt-sm='center') Here goes person.name    
+  .content-wrapper(layout='row', flex='')
+    md-sidenav.md-sidenav-left.md-whiteframe-z2(layout='column', md-component-id='left', md-is-locked-open="$mdMedia('gt-sm')")
+      md-list.muppet-list
+        md-item(ng-repeat='it in muppets')
+          md-item-content
+            md-button(ng-click='selectMuppet(it)' ng-class="{'selected':it === selected }") {{it.name}}
+    #primary-col.content-wrapper(layout='column', flex='')
+      md-content.md-padding(layout='column', flex='')
+        h2 {{selected.name}}          
+          
+

@@ -1,6 +1,6 @@
 
 //Login funtionality
-form(name="formLogin" ng-controller="LoguserCtrl as auth")
+form(name="formLogin" ng-controller="LoguserCtrl as auth" novalidate)
   md-input-container(class="md-block")
     label User
     input(ng-model="auth.user")
@@ -15,16 +15,19 @@ form(name="formLogin" ng-controller="LoguserCtrl as auth")
   //Registration form
   
   div(ng-show="auth.registration")
-    md-input-container(class="md-block")
-      label Name
-      input(ng-model="auth.name")
-    md-input-container(class="md-block")
-      label Surname
-      input(ng-model="auth.surname")
-    //Buttons
-    section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
-      md-button(class="md-raised md-primary" ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname)") Submit
-      md-button(class="md-raised md-warn" ng-click="auth.cancelRegistration()" ng-show="auth.registration") Cancel
+    form(name="formReg" novalidate)
+      md-input-container(class="md-block")
+        label Name
+        input(ng-model="auth.name" required name="name") 
+        div(ng-messages="formReg.name.$error")
+          div(ng-message="required") This field is required
+      md-input-container(class="md-block")
+        label Surname
+        input(ng-model="auth.surname" required name="surname")
+        div(ng-messages="formReg.surname.$error")
+          div(ng-message="required") This field is required
+      //Buttons
+      section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+        md-button(class="md-raised md-primary" ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname)") Submit
+        md-button(class="md-raised md-warn" ng-click="auth.cancelRegistration()" ng-show="auth.registration") Cancel
 
-
-     
