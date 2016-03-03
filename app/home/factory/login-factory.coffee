@@ -24,10 +24,10 @@ angular
             surname = aux.surname
             @loginSuccess = true
             #Save data locally
-            @userSession = localStorageService.set('user', @user)
-            @pswSession = localStorageService.set('psw', @psw)
-            @nameSession = localStorageService.set('name', name)
-            @surnameSessin = localStorageService.set('surname', surname)
+            @userSession = localStorageService.set 'user', @user
+            @pswSession = localStorageService.set 'psw', @psw
+            @nameSession = localStorageService.set 'name', name
+            @surnameSession = localStorageService.set 'surname', surname
             $state.go('main')
         if @loginSuccess is false
           alert "msg err. User and/or psw incorrect"

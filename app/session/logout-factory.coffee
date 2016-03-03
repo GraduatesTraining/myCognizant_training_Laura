@@ -12,10 +12,10 @@ angular
   .factory 'Logout',
     (localStorageService, $state) ->
       logout: ->
-        localStorageService.remove('user')
-        localStorageService.remove('psw')
-        localStorageService.remove('name')
-        localStorageService.remove('surname')
+        localStorageService.remove 'user'
+        localStorageService.remove 'psw'
+        localStorageService.remove 'name'
+        localStorageService.remove 'surname'
         $state.go('home')
         
         

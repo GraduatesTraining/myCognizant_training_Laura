@@ -33,7 +33,7 @@ angular
         if user is aux.user
           alert "Err msg. The user already exists"
         else
-          @dataUser.push(newUser)
+          @dataUser.push newUser
           $state.go('main')
           break
       return
