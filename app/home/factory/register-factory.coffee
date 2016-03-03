@@ -11,7 +11,7 @@ angular
   .module 'appExam'
   .factory 'Register', ->
     
-    register: (user, psw, name, surname,state) ->
+    register: (user, psw, name, surname, state) ->
       @user = user
       @psw = psw
       @name = name

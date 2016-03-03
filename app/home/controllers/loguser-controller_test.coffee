@@ -1,14 +1,14 @@
 ###global describe, beforeEach, it, expect, inject, module###
 'use strict'
 
-describe 'LoguserCtrl', ->
+describe 'LogUserCtrl', ->
   ctrl = undefined
 
   beforeEach module 'appExam'
 
   beforeEach inject ($rootScope, $controller) ->
-    ctrl = $controller 'LoguserCtrl'
+    ctrl = $controller 'LogUserCtrl'
 
-  it 'should have ctrlName as LoguserCtrl', ->
-    expect(ctrl.ctrlName).toEqual 'LoguserCtrl'
+  it 'should have ctrlName as LogUserCtrl', ->
+    expect(ctrl.ctrlName).toEqual 'LogUserCtrl'
 

@@ -1,26 +1,27 @@
-
-/*.header{
-  height: 10%;
+.header{
   width: 100%;
   background-color: white;
   position: fixed;
 }
+
 .headerImg{
   width: 15%;
   text-align: center;
-}*/
+  position: relative;
+ 
+  
+}
 form{
   width: 480px;
-  top: 100px;
   margin: 4em auto;
+  margin-top: 18%;
   padding: 3em 2em 2em 2em;
   background: #ffffff;
   border: 1px solid #ebebeb;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
 
-
-
+/*
 .dialogdemoBasicUsage #popupContainer {
   position: relative; }
 .dialogdemoBasicUsage .footer {
@@ -30,3 +31,4 @@ form{
 .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
   font-size: 0.8em;
   margin-top: 50px; }
+*/

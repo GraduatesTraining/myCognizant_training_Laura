@@ -11,7 +11,8 @@ angular
     'ui.router',
     'home',
     'LocalStorageModule',
-    'main'
+    'main',
+    'session'
   ]
 
 

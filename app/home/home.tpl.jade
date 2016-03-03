@@ -1,33 +1,35 @@
+.header
+  img(ng-src="./images/cognizant-logo.png" class="headerImg")
+div(layout="row" layout-align="center center")
+  //Login funtionality
+  form(name="formLogin" ng-controller="LogUserCtrl as auth" novalidate)
+    md-input-container.md-block
+      label User
+      input(ng-model="auth.user")
+    md-input-container.md-block
+      label Password
+      input(ng-model="auth.psw")
+    //Buttons    
+    section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+      md-button.md-raised.md-primary(ng-click="auth.login(auth.user, auth.psw)" ng-hide="auth.registration") Login-In
+      md-button.md-raised.md-primary(ng-click="auth.register()" ng-hide="auth.registration") Register
 
-//Login funtionality
-form(name="formLogin" ng-controller="LoguserCtrl as auth" novalidate)
-  md-input-container(class="md-block")
-    label User
-    input(ng-model="auth.user")
-  md-input-container(class="md-block")
-    label Password
-    input(ng-model="auth.psw")
-  //Buttons    
-  section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
-    md-button(class="md-raised md-primary" ng-click="auth.login(auth.user, auth.psw)" ng-hide="auth.registration") Login-In
-    md-button(class="md-raised md-primary" ng-click="auth.register()" ng-hide="auth.registration") Register
+    //Registration form
 
-  //Registration form
-  
-  div(ng-show="auth.registration")
-    form(name="formReg" novalidate)
-      md-input-container(class="md-block")
-        label Name
-        input(ng-model="auth.name" required name="name") 
-        div(ng-messages="formReg.name.$error")
-          div(ng-message="required") This field is required
-      md-input-container(class="md-block")
-        label Surname
-        input(ng-model="auth.surname" required name="surname")
-        div(ng-messages="formReg.surname.$error")
-          div(ng-message="required") This field is required
-      //Buttons
-      section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
-        md-button(class="md-raised md-primary" ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname)") Submit
-        md-button(class="md-raised md-warn" ng-click="auth.cancelRegistration()" ng-show="auth.registration") Cancel
+    div(ng-show="auth.registration")
+      form(name="formReg" novalidate)
+        md-input-container.md-block
+          label Name
+          input(ng-model="auth.name" required name="name") 
+          div(ng-messages="formReg.name.$error")
+            div(ng-message="required") This field is required
+        md-input-container.md-block
+          label Surname
+          input(ng-model="auth.surname" required name="surname")
+          div(ng-messages="formReg.surname.$error")
+            div(ng-message="required") This field is required
+        //Buttons
+        section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
+          md-button.md-raised.md-primary(ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname)") Submit
+          md-button.md-raised.md-warn(ng-click="auth.cancelRegistration()" ng-show="auth.registration") Cancel
 
