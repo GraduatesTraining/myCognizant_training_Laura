@@ -8,9 +8,14 @@
 
 ###
 class MainCtrl
-  @$inject = ['Session','localStorageService']
-  constructor: (@Session,@localStorageService) ->
+  @$inject = ['Session', 'Logout' ]
+  constructor: (@Session, @Logout) ->
     @ctrlName = 'MainCtrl'
+  goToPerson: ->
+    alert "Here I am"
+  logout:  ->
+    @Logout.logout()
+
 
 
 angular

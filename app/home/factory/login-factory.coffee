@@ -10,8 +10,8 @@
 angular
   .module 'appExam'
   .factory 'Login',
-    (localStorageService) ->
-      login: (user, psw, state) ->
+    (localStorageService,$state) ->
+      login: (user, psw) ->
         @loginSuccess = false
         @user = user
         @psw = psw
@@ -28,7 +28,7 @@ angular
             @pswSession = localStorageService.set('psw', @psw)
             @nameSession = localStorageService.set('name', name)
             @surnameSessin = localStorageService.set('surname', surname)
-            state.go('main')
+            $state.go('main')
         if @loginSuccess is false
           alert "msg err. User and/or psw incorrect"
         return

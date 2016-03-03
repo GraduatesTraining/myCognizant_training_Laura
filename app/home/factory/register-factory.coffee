@@ -9,9 +9,9 @@
 ###
 angular
   .module 'appExam'
-  .factory 'Register', ->
+  .factory 'Register', ($state) ->
     
-    register: (user, psw, name, surname, state) ->
+    register: (user, psw, name, surname) ->
       @user = user
       @psw = psw
       @name = name
@@ -34,7 +34,7 @@ angular
           alert "Err msg. The user already exists"
         else
           @dataUser.push(newUser)
-          state.go('main')
+          $state.go('main')
           break
       return
   

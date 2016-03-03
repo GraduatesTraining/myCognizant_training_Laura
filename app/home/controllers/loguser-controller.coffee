@@ -8,16 +8,16 @@
 
 ###
 class LogUserCtrl
-  @$inject = ['Login','Register','localStorageService', '$state']
+  @$inject = ['Login','Register']
   @registration = false
-  constructor: (@Login, @Register, @localStorageService, @$state) ->
+  constructor: (@Login, @Register) ->
     @ctrlName = 'LogUserCtrl'
   login: (user, psw) ->
-    @Login.login(user, psw, @$state)
+    @Login.login(user, psw)
   register: ->
     @registration = true
   saveUser: (user, psw, name, surname) ->
-    @Register.register(user, psw, name, surname, @$state)
+    @Register.register(user, psw, name, surname)
   cancelRegistration: ->
     @registration = false
 

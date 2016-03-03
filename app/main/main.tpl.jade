@@ -1,12 +1,15 @@
-div(ng-cloak)
-  md-toolbar
-    md-toolbar-tools
-      p.p1 {{ nameSession + " " + surnameSession }}
-  div(layout="row" class="main-container")
-    div(flex="25" class="menu")
-      md-subheader.md-no-sticky Menu
-      md-button(aria-label="exam" ui-sref="main.exams") Exams
-      md-button(aria-label="stats" ui-sref="main.stats") Stats 
-    div(flex="75" class="menu")
-      ui-view    
-    
+md-toolbar
+  md-toolbar-tools
+    md-divider
+    md-list-item(ng-click="goToPerson()")
+      img(alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar")
+      p {{ nameSession + " " + surnameSession }}
+    //p.p1 {{ nameSession + " " + surnameSession }}
+div(layout="row")
+  div(flex="20" class="menu" layout="column")
+    md-subheader Menu
+    md-button(aria-label="exam" ui-sref="main.exams") Exams
+    md-button(aria-label="stats" ui-sref="main.stats") Stats
+    md-button(aria-label="stats" ng-click="main.logout()") Log Out 
+  div(flex="80" class="menu")
+    ui-view    
