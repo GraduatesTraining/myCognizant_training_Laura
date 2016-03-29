@@ -1,15 +1,36 @@
 md-toolbar
   md-toolbar-tools
-    md-divider
-    md-list-item(ng-click="goToPerson()")
-      img(alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar")
+    md-list-item(ng-click="main.goToPerson()")
+      img(ng-src="./images/cat.jpg" class="md-avatar")
       p {{ nameSession + " " + surnameSession }}
-    //p.p1 {{ nameSession + " " + surnameSession }}
+      //Works but i need uisref
+        md-icon(md-svg-icon="email-outline" ng-click="main.goToPerson2()" class="md-secondary md-hue-3")
+      //Doesnt work, enter in both functions
+      a(ui-sref="main.inbox" class="submenu")
+        md-icon(md-svg-icon="email-outline" class="md-secondary md-hue-3")
+  
 div(layout="row")
   div(flex="20" class="menu" layout="column")
-    md-subheader Menu
-    md-button(aria-label="exam" ui-sref="main.exams") Exams
-    md-button(aria-label="stats" ui-sref="main.stats") Stats
-    md-button(aria-label="stats" ng-click="main.logout()") Log Out 
+    a(ui-sref="main.exams" class="submenu")
+      md-list-item(aria-label="exam")
+        md-icon(md-svg-icon="package")
+        p Exams
+    md-divider
+    a(ui-sref="main.stats" class="submenu")
+      md-list-item(aria-label="stats")
+        md-icon(md-svg-icon="hexagon")
+        p Stats
+      md-divider
+    a(ui-sref="main.settings" class="submenu")
+      md-list-item(aria-label="stats")
+        md-icon(md-svg-icon="account")
+        p My account
+      md-divider      
+    md-list-item(ng-click="main.logout()")
+      md-icon(md-svg-icon="logout")
+      p Log Out
+    md-divider      
+    
+
   div(flex="80" class="menu")
     ui-view    

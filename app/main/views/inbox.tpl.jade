@@ -1,0 +1,50 @@
+p hello 1
+p {{dataMessages}}
+ul(ng-repeat="message in dataMessages")
+  p hello
+  li {{message.what}}
+  li {{message.who}}
+
+//
+    div(layout="column" flex layout-fill ng-cloak)
+      md-toolbar.md-scroll-shrink
+        div(class="md-toolbar-tools") Inbox
+      md-content(style="height: 600px;" md-theme="altTheme")
+        section
+          md-subheader(class="md-primary") Unread Messages
+          md-list(layout-padding)
+            md-list-item(class="md-3-line" ng-repeat="message in dataMessages")
+              img(ng-src="./images/cat.jpg" class="md-avatar" alt="{{message.who}}")
+              div(class="md-list-item-text")
+                p hello
+                h3 {{message.what}}
+                h4 {{message.who}}
+                p {{message.notes}}
+        section
+          md-subheader(class="md-warn") Late Messages 
+          md-list(layout="column" layout-padding)
+            md-list-item(class="md-3-line" ng-repeat="message in dataMessages")
+              img(ng-src="./images/cat.jpg" class="md-avatar" alt="{{message.who}}")
+              div(class="md-list-item-text")
+                h3 {{message.what}}
+                h4 {{message.who}}
+                p {{message.notes}}
+        section
+          md-subheader Read Messages
+          md-list(layout="column" layout-padding)
+            md-list-item(class="md-3-line" ng-repeat="message in dataMessages")
+              img(ng-src="./images/cat.jpg" class="md-avatar" alt="{{message.who}}")
+              div(class="md-list-item-text")
+                h3 {{message.what}} 
+                h4 {{message.who}} 
+                p {{message.notes}}
+        section
+          md-subheader(class="md-accent") Archived messages
+          md-list(layout="column" layout-padding)
+            md-list-item(class="md-3-line" ng-repeat="message in dataMessages")
+              img(ng-src="./images/cat.jpg" class="md-avatar" alt="{{message.who}}")
+              div(class="md-list-item-text")
+                h3 {{message.what}}
+                h4 {{message.who}}
+                p {{message.notes}}
+

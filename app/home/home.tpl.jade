@@ -22,14 +22,24 @@ div(layout="row" layout-align="center center")
           label Name
           input(ng-model="auth.name" required name="name") 
           div(ng-messages="formReg.name.$error")
-            div(ng-message="required") This field is required
+            div(ng-message="required")
         md-input-container.md-block
           label Surname
           input(ng-model="auth.surname" required name="surname")
           div(ng-messages="formReg.surname.$error")
-            div(ng-message="required") This field is required
+            div(ng-message="required")
+        md-input-container.md-block    
+          label Email 
+          input(ng-model="auth.email" required name="email") 
+          div(ng-messages="formReg.email.$error")
+            div(ng-message="required")
+        md-input-container.md-block    
+          label Telephone
+          input(ng-model="auth.phone" required name="phone") 
+          div(ng-messages="formReg.phone.$error")
+            div(ng-message="required")  
         //Buttons
         section(layout="row" layout-sm="column" layout-align="center center" layout-wrap)
-          md-button.md-raised.md-primary(ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname)") Submit
+          md-button.md-raised.md-primary(ng-click="auth.saveUser(auth.user, auth.psw,auth.name, auth.surname, auth.email, auth.phone)") Submit
           md-button.md-raised.md-warn(ng-click="auth.cancelRegistration()" ng-show="auth.registration") Cancel
 

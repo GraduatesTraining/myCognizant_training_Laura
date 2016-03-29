@@ -8,15 +8,15 @@
 
 ###
 class MainCtrl
-  @$inject = ['Session', 'Logout' ]
+  @$inject = ['Session', 'Logout']
   constructor: (@Session, @Logout) ->
     @ctrlName = 'MainCtrl'
-  goToPerson: ->
-    alert "Here I am"
   logout:  ->
     @Logout.logout()
-
-
+  goToPerson: ->
+    alert "goToPerson. Without develop"
+  goToPerson2: ->
+    alert "goToPerson2."
 
 angular
   .module('main')
