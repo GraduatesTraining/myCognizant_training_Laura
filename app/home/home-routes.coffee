@@ -7,5 +7,5 @@ angular
       .state 'home',
         url: '/home'
         templateUrl: 'home/home.tpl.html'
-        controller: 'HomeCtrl'
-        controllerAs: 'home'
+        controller: 'LogUserCtrl'
+        controllerAs: 'auth'
